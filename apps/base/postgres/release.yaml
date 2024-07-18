@@ -20,6 +20,8 @@ spec:
   values:
     auth:
       postgresPassword: password
+      username: charles
+      password: password
     global:
       postgresql:
         auth:
