@@ -26,3 +26,5 @@ spec:
       postgresql:
         auth:
           postgresPassword: password
+          username: charles
+          password: password
