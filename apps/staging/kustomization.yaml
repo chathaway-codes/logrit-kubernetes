@@ -3,6 +3,9 @@ kind: Kustomization
 resources:
   - ../base/podinfo
   - ../base/postgres
+spec:
+  decryption:
+    provider: sops
 patches:
   - path: podinfo-values.yaml
     target:
