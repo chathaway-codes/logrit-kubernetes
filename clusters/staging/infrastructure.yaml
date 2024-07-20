@@ -5,8 +5,6 @@ metadata:
   name: infra-controllers
   namespace: flux-system
 spec:
-  decryption:
-    provider: sops
   interval: 1h
   retryInterval: 1m
   timeout: 5m
@@ -41,3 +39,19 @@ spec:
       target:
         kind: ClusterIssuer
         name: letsencrypt
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: sops-encrypted
+  namespace: postgres
+spec:
+  interval: 5m
+  path: "./clusters/staging"
+  sourceRef:
+    kind: GitRepository
+    name: my-secrets
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-keys
