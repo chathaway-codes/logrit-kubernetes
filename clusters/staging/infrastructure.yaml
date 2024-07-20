@@ -48,6 +48,7 @@ metadata:
 spec:
   interval: 5m
   path: "./clusters/staging"
+  prune: true
   sourceRef:
     kind: GitRepository
     name: my-secrets
