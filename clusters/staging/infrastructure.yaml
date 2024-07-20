@@ -47,7 +47,7 @@ metadata:
   namespace: default
 spec:
   interval: 5m
-  path: "./clusters/staging"
+  path: "./"
   prune: true
   sourceRef:
     kind: GitRepository
