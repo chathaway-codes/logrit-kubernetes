@@ -11,7 +11,7 @@ spec:
     branch: main
   secretRef:
     name: flux-system
-  url: ssh://git@github.com/chathaway-codes/logrit-kubernetes
+  url: https://github.com/chathaway-codes/logrit-kubernetes.git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -21,10 +21,6 @@ metadata:
 spec:
   interval: 10m0s
   path: ./clusters/staging
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-gpg
   prune: true
   sourceRef:
     kind: GitRepository
