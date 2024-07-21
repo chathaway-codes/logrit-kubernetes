@@ -16,7 +16,7 @@ patches:
           decryption:
             provider: sops
             secretRef:
-              name: sops-key
+              name: sops-gpg
     target:
       kind: Kustomization
       labelSelector: app.kubernetes.io/sops=enabled
