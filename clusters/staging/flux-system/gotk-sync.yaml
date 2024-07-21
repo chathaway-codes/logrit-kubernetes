@@ -21,6 +21,10 @@ metadata:
 spec:
   interval: 10m0s
   path: ./clusters/staging
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
   prune: true
   sourceRef:
     kind: GitRepository
